@@ -25,7 +25,19 @@ Fomat: <select name="prodFormat">
 <option>Green</option>
 <option>Blue</option>
 </select>
+Grades:
 
+<input type="checkbox" name="prodGrd" value="A">
+<input type="checkbox" name="prodGrd" value="B">
+<input type="checkbox" name="prodGrd" value="C">
+
+Brands
+<select name="prodBrnd" multiple="multiple">
+<option>INFY</option>
+<option>NIT</option>
+<option>TCS</option>
+
+</select>
 <input type="submit" value="Add Product">
 </pre>
 	</form>

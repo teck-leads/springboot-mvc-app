@@ -17,7 +17,8 @@
 			<th>Product Model</th>
 			<th>Product Description</th>
 			<th>Product Format</th>
-
+			<th>Product Grade</th>
+<th>Product Brand</th>
 		</tr>
 
 
@@ -28,6 +29,8 @@
 			<td>${product.prodModel }</td>
 			<td>${product.prodDesc }</td>
 			<td>${product.prodFormat }</td>
+			<td>${product.prodGrd }</td>
+			<td>${product.prodBrnd }</td>
 
 		</tr>
 

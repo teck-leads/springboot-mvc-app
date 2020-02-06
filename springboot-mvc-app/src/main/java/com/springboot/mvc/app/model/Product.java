@@ -3,6 +3,7 @@ package com.springboot.mvc.app.model;
 import java.util.List;
 
 import lombok.Data;
+
 @Data
 public class Product {
 	private Integer prodId;
@@ -11,8 +12,7 @@ public class Product {
 	private String prodModel;
 	private String prodDesc;
 	private String prodFormat;
-	/*
-	 * private List<String> prodGrd; private List<String> prodBrnd;
-	 */
+	private List<String> prodGrd;
+	private List<String> prodBrnd; 
 
 }
