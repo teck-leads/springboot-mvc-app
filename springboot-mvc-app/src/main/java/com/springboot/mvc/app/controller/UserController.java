@@ -10,10 +10,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.springboot.mvc.app.model.User;
 import com.springboot.mvc.app.service.UserService;
 
 @Controller
 public class UserController {
+	private List<User> users=new ArrayList<>();
+	{
+		users.add(new User(12l,"madhav","India"));
+		users.add(new User(13l,"teja","India"));
+		users.add(new User(14l,"dill","USA"));
+	}
 	@Autowired
 	private UserService service;
 
@@ -46,5 +53,17 @@ public class UserController {
 		service.getUserList(model);
 		
 		return "data";
+	}
+	
+	@RequestMapping(value = "/regusr",method = RequestMethod.GET)
+	public String getReg() {
+		return "registerUser";
+	}
+	
+	
+	@RequestMapping(value = "/getusr",method = RequestMethod.GET)
+	public String getUsers(Model model) {
+		model.addAttribute("users", users);
+		return "userDetails";
 	}
 }

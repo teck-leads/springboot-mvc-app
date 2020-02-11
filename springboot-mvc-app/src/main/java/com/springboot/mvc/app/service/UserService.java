@@ -11,6 +11,7 @@ import com.springboot.mvc.app.model.User;
 @Service
 public class UserService {
 
+	
 	public void getUser(Model model) {
 		User user = new User();
 		user.setId(1002187L);
@@ -35,5 +36,6 @@ public class UserService {
 		
 		model.addAttribute("users", users);
 	}
+
 
 }
