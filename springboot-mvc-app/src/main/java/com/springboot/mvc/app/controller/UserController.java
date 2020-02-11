@@ -1,6 +1,7 @@
 package com.springboot.mvc.app.controller;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,7 @@ import com.springboot.mvc.app.model.User;
 import com.springboot.mvc.app.service.UserService;
 
 @Controller
+@RequestMapping("/users")
 public class UserController {
 	private List<User> users=new ArrayList<>();
 	{
@@ -65,5 +67,22 @@ public class UserController {
 	public String getUsers(Model model) {
 		model.addAttribute("users", users);
 		return "userDetails";
+	}
+	@RequestMapping(value = "/delete",method = RequestMethod.GET)
+	public String deleteUser(@RequestParam("id") Long id) {
+			
+			
+		Iterator<User> itr=users.iterator();
+			while (itr.hasNext()) {
+				if (itr.next().getId() == id) {
+					itr.remove();
+					break;
+				}
+			}
+					
+		
+		
+		
+		return "redirect:getusr";
 	}
 }
