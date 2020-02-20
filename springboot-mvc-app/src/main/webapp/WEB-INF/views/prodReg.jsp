@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+	<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,10 +33,29 @@ Grades:
 <input type="checkbox" name="prodGrd" value="C">
 
 Brands
-<select name="prodBrnd" multiple="multiple">
-<option>INFY</option>
-<option>NIT</option>
-<option>TCS</option>
+<select name="prodBrnd" >
+
+
+
+
+
+<c:choose>
+
+			<c:when test="${empty prodcutDp1.prodBrnd}">
+				<option>No value</option>
+			</c:when>
+			<c:otherwise>
+				<c:forEach items="${ prodcutDp1.prodBrnd}" var="dw">
+
+<option>${dw }</option>
+
+</c:forEach>
+			</c:otherwise>
+		</c:choose>
+
+
+
+
 
 </select>
 <input type="submit" value="Add Product">

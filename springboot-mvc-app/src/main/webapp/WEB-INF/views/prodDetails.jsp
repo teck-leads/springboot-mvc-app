@@ -30,7 +30,7 @@
 			<td>${product.prodDesc }</td>
 			<td>${product.prodFormat }</td>
 			<td>${product.prodGrd }</td>
-			<td>${product.prodBrnd }</td>
+			<td>${product.prodBrnd[0] }</td>
 
 		</tr>
 
